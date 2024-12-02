@@ -1,0 +1,394 @@
+[
+	{
+		"product": "Chat AI",
+		"topics": [
+			{
+				"label": "Financing",
+				"questions": [
+					{
+						"answer": "Getting pre-approved for a vehicle is a great step in buying your next vehicles. We are here to help you through this process. Our finance experts will assist you through the pre-approval process. Check out our quick financing application here: https://www.southwestfordlincoln.net/tools/700credit/quickapp.htm",
+						"question": "Can I get pre-approved for a vehicle?"
+					},
+					{
+						"answer": "Our personal approach to helping every customer with their vehicle purchase allows you to customize the financial details of the purchase to your specific needs. ",
+						"question": "Can I customize my deal?"
+					},
+					{
+						"answer": "We can help with all types of credit good to bad. We will personalize the financing solution to your personal needs. We have a wide variety of financing solutions to meet your needs. ",
+						"question": "Can you tell me more about your financing center?"
+					},
+					{
+						"answer": "We've worked with countless customers with all kinds of credit to help them discover their financing options.",
+						"question": "Can I finance the vehicle even if I have bad credit?"
+					},
+					{
+						"answer": "We work with many banks and credit unions electronically, most likely even yours.",
+						"question": "What financing options are available at the dealership?"
+					},
+					{
+						"answer": "Interest rates for financing vary based on several factors including your credit history, the loan term, and current market conditions. We recommend contacting us directly so we can provide you with the most accurate and personalized interest rate information based on your specific circumstances.",
+						"question": "Can you provide information on the interest rates for financing?"
+					},
+					{
+						"answer": "Our financing team is here to help you with every step of the process. For financing applications get started here: https://www.southwestfordlincoln.net/tools/700credit/quickapp.htm",
+						"question": "How can I apply for financing?"
+					},
+					{
+						"answer": "",
+						"question": "What factors determine the value of my trade-in?"
+					},
+					{
+						"answer": "Yes, vehicles in any condition can be considered for a trade-in for a new vehicle. We would like to see your vehicle, please schedule an appointment with us. ",
+						"question": "Will you still accept my trade-in even if my vehicle is in poor condition?"
+					}
+				]
+			},
+			{
+				"label": "Discounts, promotions",
+				"questions": [
+					{
+						"answer": "Please check out the specials tab for all of our current specials. ",
+						"question": "What are your dealer specials?"
+					},
+					{
+						"answer": "Please check out the specials tab for all of our current specials. ",
+						"question": "What are the specials on pre-owned cars?"
+					},
+					{
+						"answer": "Please check out the specials tab for all of our current specials. ",
+						"question": "What are the specials for new cars?"
+					},
+					{
+						"answer": "Please check out the specials tab for all of our current specials. ",
+						"question": "Are there any ongoing discounts or promotions?"
+					},
+					{
+						"answer": "We thank all that served in our  military. Please contact us or visit our dealership for more details on the available offers and eligibility requirements.",
+						"question": "Are there any discounts for military personnel?"
+					},
+					{
+						"answer": "Please check out the specials tab for all of our current specials. ",
+						"question": "How can I find out about your current promotions?"
+					},
+					{
+						"answer": "We were students once as well, we know how hard it is. To learn more about the discounts and how to qualify, please get in touch with us or visit our dealership.",
+						"question": "Are there any discounts for students?"
+					},
+					{
+						"answer": "We know how challenging it can be to navigate the car buying process. Let our experts assist you with the process and discuss what discounts are available and how to qualify. ",
+						"question": "Do you offer any special deals for first-time buyers?"
+					}
+				]
+			},
+			{
+				"label": "Taxes and Fees",
+				"questions": [
+					{
+						"answer": "Typical taxes and fees can include Sales Tax, Registration Fee or Title fee. Let our team of sales experts explain the taxes and fees in detail. ",
+						"question": "What extra costs are there besides the car price?"
+					},
+					{
+						"answer": "Typical taxes and fees can include Sales Tax, Registration Fee or Title fee. Let our team of sales experts explain the taxes and fees in detail. ",
+						"question": "Can you list out the taxes and fees I'll pay?"
+					},
+					{
+						"answer": "Our sales process is open and transparent. Let our sales experts guide you through the process and outline all the fees associated with purchasing a car from us. ",
+						"question": "Are there any hidden fees I should know about?"
+					},
+					{
+						"answer": "",
+						"question": "What are the specific state or local taxes that I should be aware of?"
+					},
+					{
+						"answer": "",
+						"question": "Are taxes and fees calculated based on the purchase price before or after any discounts or promotions?"
+					},
+					{
+						"answer": "",
+						"question": "What are the taxes or fees related to vehicle registration and titling?"
+					}
+				]
+			},
+			{
+				"label": "Price Negotiation",
+				"questions": [
+					{
+						"answer": "Please contact our dealership for more details on securing the best price on a vehicle.",
+						"question": "Is the price of the car negotiable?"
+					},
+					{
+						"answer": "Please contact our dealership for more details on securing the best price on a vehicle.",
+						"question": "Can I still bargain if there's a promotion?"
+					},
+					{
+						"answer": "We can personalize the transaction process and work with you to find the best deal possible. Get in touch with our Sales experts to discuss your specific situation. ",
+						"question": "Can I get a better deal if I pay in cash?"
+					}
+				]
+			},
+			{
+				"label": "Hold Car / Deposit",
+				"questions": [
+					{
+						"answer": "Yes, you can usually put a car on hold with a deposit. The terms, including how long the car can be held and the amount of the deposit, may vary. Please contact us to arrange this or to learn more about the specific details.",
+						"question": "Can I put a car on hold?"
+					},
+					{
+						"answer": "The deposit amount to hold a car can vary depending on a number of factors. Speak with a member of our sales team to find out more. ",
+						"question": "How much is the deposit to hold a car?"
+					},
+					{
+						"answer": "We pride ourselves of taking into consideration the needs of each one of our clients. The length of time we can hold a car for will depend on a number of considerations. Speak with a member of our sales team to find out more. ",
+						"question": "How long can you hold a car for me?"
+					},
+					{
+						"answer": "Please contact our dealership for more details on our deposit policy when purchasing a vehicle.",
+						"question": "Is the deposit refundable?"
+					},
+					{
+						"answer": "Please contact our dealership for more details on our deposit policy when purchasing a vehicle.",
+						"question": "Can I change my mind after putting a deposit?"
+					}
+				]
+			},
+			{
+				"label": "Test drive at home",
+				"questions": [
+					{
+						"answer": "We certainly do offer at-home test drives! I'll make sure that a member of the team gets in touch with you as soon as possible to arrange all of the details.",
+						"question": "Do you offer the option to test drive a vehicle at my location?"
+					},
+					{
+						"answer": "We certainly do offer at-home test drives! I'll make sure that a member of the team gets in touch with you as soon as possible to arrange all of the details.",
+						"question": "Can I have multiple vehicles brought to my location for test drives?"
+					},
+					{
+						"answer": "We certainly do offer at-home test drives! I'll make sure that a member of the team gets in touch with you as soon as possible to arrange all of the details.",
+						"question": "Is there any cost associated with a home test drive?"
+					}
+				]
+			},
+			{
+				"label": "Shipping",
+				"questions": [
+					{
+						"answer": "The cost of shipping can vary quite a bit depending on where you're located. We'd be happy to have a member of our team reach out to help make sure that you get the fastest delivery and lowest possible price available.",
+						"question": "Do you offer vehicle shipping services?"
+					},
+					{
+						"answer": "The cost of shipping can vary quite a bit depending on where you're located. We'd be happy to have a member of our team reach out to help make sure that you get the fastest delivery and lowest possible price available.",
+						"question": "What is the cost of shipping a car?"
+					},
+					{
+						"answer": "",
+						"question": "Can I arrange my own shipping?"
+					},
+					{
+						"answer": "",
+						"question": "What is the estimated delivery time for a vehicle that's being shipped?"
+					}
+				]
+			},
+			{
+				"label": "Warranty",
+				"questions": [
+					{
+						"answer": "Our dealership offers various warranties depending on the vehicle you purchase, including manufacturer warranties, extended warranties, and specific coverage for certain parts and services. For new vehicles, you'll typically receive a comprehensive manufacturer's warranty that covers most parts and labor for a specified period. For used vehicles, warranty options can vary. We also offer the option to purchase extended warranties for added peace of mind. Please contact us directly for more detailed information about the warranty options available for your vehicle of interest.",
+						"question": "What type of warranty is provided by the dealership?"
+					},
+					{
+						"answer": "Different vehicles may qualify for different warranty options. Please contact our dealership for specific warranty information on your vehicle of interest. ",
+						"question": "How long does the warranty last?"
+					},
+					{
+						"answer": "",
+						"question": "What does the warranty cover?"
+					},
+					{
+						"answer": "",
+						"question": "Can I purchase an extended warranty?"
+					},
+					{
+						"answer": "",
+						"question": "Is the warranty transferable if I sell the car?"
+					}
+				]
+			},
+			{
+				"label": "General information about dealership",
+				"questions": [
+					{
+						"answer": "If a car catches your eye, we'll be happy to arrange for a test drive in a new Ford F-150, Explorer, Bronco, Escape or F-250. Once behind the wheel, you'll come to understand how Ford has distinguished itself from competing brands. And, we always have the perfect new car in stock whether you're seeking thrilling performance, family focused comfort, innovative tech features or all of the above! 1407 N. 10th Street, Arkadelphia, AR 71923",
+						"question": "Can you give me general information about the dealership?"
+					},
+					{
+						"answer": "Here at Southwest Ford Lincoln, we always strive to ensure that you enjoy the best car-shopping and dealership experience of your life. We make that possible by offering a vast collection of cars, straightforward financing options and expert car care services. That's why it only makes sense to turn to us for everything related to Ford near Arkadelphia, Malvern, Hot Springs and Hope AR.",
+						"question": "Why should I buy from your dealership?"
+					},
+					{
+						"answer": "",
+						"question": "What perks do you offer to customers?"
+					}
+				]
+			},
+			{
+				"label": "Leasing",
+				"questions": [
+					{
+						"answer": "Yes we do! When it come to getting a new or used car the two most common purchase options are leasing and financing. We are experts in both and can customize payments to your needs.",
+						"question": "Do you offer car leasing?"
+					},
+					{
+						"answer": "In a nutshell, leasing is like renting a car from a dealership for long period of time, usually anywhere from 24 to 60 months. There are benefits of leasing as well such as a lower monthly cost and the initial down-payment might be lower as well.",
+						"question": "How does car leasing work?"
+					},
+					{
+						"answer": "",
+						"question": "What's the difference between leasing and financing?"
+					},
+					{
+						"answer": "",
+						"question": "What is the mileage limit for leased vehicles?"
+					},
+					{
+						"answer": "In most cases yes, you can buy a car at the end of the lease. However, there are some lease programs where this is not an option. Our leasing experts will review these details with you upon purchase. ",
+						"question": "Can I buy the leased car at the end of the lease term?"
+					},
+					{
+						"answer": "The average lease term is about 24 or 36 months",
+						"question": "How long is the typical lease term?"
+					},
+					{
+						"answer": "",
+						"question": "What are the upfront costs associated with leasing a vehicle?"
+					}
+				]
+			},
+			{
+				"label": "Selling the car",
+				"questions": [
+					{
+						"answer": "Yes, we do buy used cars from customers. Whether you're looking to trade in your vehicle towards the purchase of a new one or simply sell your vehicle outright, we can help. Please contact us with details about your car, including its make, model, year, condition, and mileage, and we'll provide you with a competitive offer. We're committed to making the process as smooth and straightforward as possible.",
+						"question": "Can I sell a car through your dealership?"
+					},
+					{
+						"answer": "Yes, we do buy used cars from customers. Whether you're looking to trade in your vehicle towards the purchase of a new one or simply sell your vehicle outright, we can help. Please contact us with details about your car, including its make, model, year, condition, and mileage, and we'll provide you with a competitive offer. We're committed to making the process as smooth and straightforward as possible.",
+						"question": "Do you buy used cars from customers?"
+					},
+					{
+						"answer": "To sell your car through us, you'll typically need the following documents:\n\n- Title of the Vehicle: The most important document, proving ownership of the vehicle. If you still owe money on the car, we'll need to discuss the payoff process.\n\n- Valid Identification: A government-issued ID (such as a driver's license) to verify your identity.\n\n- Vehicle Registration: Current registration to prove the vehicle is registered in your name.\n\n- Loan Payoff Information: If there's a lien on the vehicle, we'll need details about the loan for the payoff process.\n\n- Service Records: While not always mandatory, providing service records can help validate the maintenance history and potentially increase the value of your car.\n\n- Vehicle Keys and Remotes: All sets of keys, remotes, and any other accessories that come with the car.\n\nIt's a good idea to contact us directly for a complete list of required documents, as specific requirements may vary. We're here to guide you through every step of the process.",
+						"question": "What documents do I need to sell my car?"
+					},
+					{
+						"answer": "",
+						"question": "Do I need to buy a car from you if I want to sell my old one?"
+					},
+					{
+						"answer": "",
+						"question": "Can I get an estimate for my car's value before selling it?"
+					}
+				]
+			},
+			{
+				"label": "Info about AI assistant",
+				"questions": [
+					{
+						"answer": "Hello there! I'm an AI-powered chatbot, designed and trained to process and understand human language.",
+						"question": "Are you a bot or a human?"
+					}
+				]
+			},
+			{
+				"label": "Dealership policies",
+				"questions": [
+					{
+						"answer": "We strive to ensure our customers are thrilled with their purchase. Please contact your sales professional to discuss your unique situation. ",
+						"question": "What is your return policy if I'm not satisfied with the car?"
+					},
+					{
+						"answer": "We work hard to ensure our customers are happy. Please contact the dealership to find out more. ",
+						"question": "Do you have a satisfaction guarantee?"
+					},
+					{
+						"answer": "We strive to ensure our customers are thrilled with their purchase. Please contact your sales professional to discuss your unique situation. ",
+						"question": "Can I cancel a purchase after signing the paperwork?"
+					},
+					{
+						"answer": "We strive to ensure our customers are thrilled with their purchase. Please contact your sales professional to discuss your unique situation. ",
+						"question": "Are there any fees for canceling a purchase?"
+					},
+					{
+						"answer": "We are committed to protecting the personal information of our customers. Please contact us to learn more. ",
+						"question": "What is your privacy policy regarding customer information?"
+					}
+				]
+			},
+			{
+				"label": "Insurance",
+				"questions": [
+					{
+						"answer": "Yes, you'll need to have insurance in place before finalizing the purchase of a car. We recommend contacting your insurance provider to arrange coverage in advance.",
+						"question": "Do I need to have insurance before buying a car?"
+					},
+					{
+						"answer": "Various insurance options exist for every vehicle purchase and can be customized to your unique situation and budget. The best way to get a comprehensive understanding of your situation is to speak with one of our insurance consultants. ",
+						"question": "Can I get insurance through your dealership?"
+					}
+				]
+			},
+			{
+				"label": "Service",
+				"questions": [
+					{
+						"answer": "Scheduling a service appointment for your vehicle is easy. You can either visit our website and fill out the service appointment form, or contact our service department directly via phone or email. We're here to accommodate your schedule and ensure your vehicle receives the care it needs. Please reach out to us with your preferred dates and times, and we'll confirm your appointment details promptly.",
+						"question": "How can I schedule a service appointment for my vehicle?"
+					},
+					{
+						"answer": "For information on part availability, please provide us with the specific details, and we'll get back to you. If you would like to come in for us to replace the part for you please book a service appointment.",
+						"question": "Can you tell me if a certain part is available in stock?"
+					},
+					{
+						"answer": "Service costs vary by type and vehicle model. Please reach out with your specific service needs for an accurate quote.",
+						"question": "How much does service cost?"
+					},
+					{
+						"answer": "The cost to replace a part varies depending on the specific part you need and the model of your vehicle. For an accurate quote, please provide us with the part details and your vehicle's make, model, and year. You can contact us directly or visit our service center, and we'll be happy to provide you with a detailed estimate.",
+						"question": "How much would it cost to replace a part?"
+					},
+					{
+						"answer": "We offer a wide range of repair services. Contact us with your specific needs, and we'll be happy to assist.",
+						"question": "What types of repair services do you offer?"
+					},
+					{
+						"answer": "",
+						"question": "What regular maintenance do you recommend for my vehicle?"
+					},
+					{
+						"answer": "For the latest recall information on your vehicle, please visit National Highway Traffic Safety Administration's (NHTSA) recall website and enter your vehicle's identification number (VIN). This will provide you with the most up-to-date recall information directly from the official source.",
+						"question": "Are there any recalls on my vehicle?"
+					},
+					{
+						"answer": "To reschedule or cancel your service appointment, please contact us directly with your appointment details.",
+						"question": "How do I reschedule / cancel my service appointment?"
+					},
+					{
+						"answer": "Our service center hours vary. Please check our website or contact us directly for current hours.",
+						"question": "What are your service center hours?"
+					},
+					{
+						"answer": "For information on current service promotions or discounts, please contact us directly or check our website.",
+						"question": "Are there any ongoing service promotions or discounts?"
+					},
+					{
+						"answer": "Warranty coverage varies. Please contact us with your service needs and vehicle details so we can provide specific information.",
+						"question": "Is this service covered under my vehicle's warranty?"
+					},
+					{
+						"answer": "Yes, we provide updates on your vehicle's service status. Please contact us for more information on how to receive updates.",
+						"question": "Can I get updates on the status of my vehicle's service or repair?"
+					}
+				]
+			}
+		]
+	}
+]
