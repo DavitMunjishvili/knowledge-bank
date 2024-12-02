@@ -26,19 +26,47 @@ type Product struct {
 	ProductName ProductName `gorm:"unique"`
 }
 
-type SegmentName string
+type GroupTypes string
 
 const (
-	Car_Buying SegmentName = "Car Buying"
-	Sales      SegmentName = "Sales"
-	Service    SegmentName = "Service"
-	Upsell     SegmentName = "Upsell"
+	Segment GroupTypes = "Segment"
 )
 
-type Segment struct {
+type GroupType struct {
 	gorm.Model
-	SegmentName SegmentName `gorm:"unique"`
+	GroupTypeName GroupTypes `gorm:"unique"`
 }
+
+type GroupNames string
+
+const (
+	Car_Buying GroupNames = "Car Buying"
+	Sales      GroupNames = "Sales"
+	Service    GroupNames = "Service"
+	Upsell     GroupNames = "Upsell"
+)
+
+type Group struct {
+	gorm.Model
+	GroupName   GroupNames
+	GroupTypeID *uint
+
+	GroupType GroupType
+}
+
+// type SegmentName string
+//
+// const (
+// 	Car_Buying SegmentName = "Car Buying"
+// 	Sales      SegmentName = "Sales"
+// 	Service    SegmentName = "Service"
+// 	Upsell     SegmentName = "Upsell"
+// )
+//
+// type Segment struct {
+// 	gorm.Model
+// 	SegmentName SegmentName `gorm:"unique"`
+// }
 
 type Topic struct {
 	gorm.Model
@@ -61,14 +89,14 @@ type Answer struct {
 type Entry struct {
 	gorm.Model
 	DealerID   uint
-	SegmentID  uint
+	GroupID    uint
 	ProductID  uint
 	TopicID    uint
 	QuestionID *uint
 	AnswerID   *uint
 
 	Dealer   Dealer
-	Segment  Segment
+	Group    Group
 	Product  Product
 	Topic    Topic
 	Question Question
@@ -85,7 +113,8 @@ func Initialize() *gorm.DB {
 
 	db.AutoMigrate(&Dealer{})
 	db.AutoMigrate(&Product{})
-	db.AutoMigrate(&Segment{})
+	db.AutoMigrate(&GroupType{})
+	db.AutoMigrate(&Group{})
 	db.AutoMigrate(&Topic{})
 	db.AutoMigrate(&Question{})
 	db.AutoMigrate(&Answer{})
@@ -102,15 +131,23 @@ func Initialize() *gorm.DB {
 		db.Where(product).FirstOrCreate(&product)
 	}
 
-	segments := []*Segment{
-		{SegmentName: Car_Buying},
-		{SegmentName: Sales},
-		{SegmentName: Service},
-		{SegmentName: Upsell},
+	groupTypes := []*GroupType{
+		{GroupTypeName: Segment},
 	}
 
-	for _, segment := range segments {
-		db.Where(segment).FirstOrCreate(&segment)
+	for _, groupType := range groupTypes {
+		db.Where(groupType).FirstOrCreate(&groupType)
+	}
+
+	groups := []*Group{
+		{GroupName: Car_Buying},
+		{GroupName: Sales},
+		{GroupName: Service},
+		{GroupName: Upsell},
+	}
+
+	for _, group := range groups {
+		db.Where(group).FirstOrCreate(&group)
 	}
 
 	defaultTopics := []*Topic{
