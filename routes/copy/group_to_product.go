@@ -7,16 +7,15 @@ import (
 	"gorm.io/gorm"
 )
 
-type CopyTopicToSegmentRequestBody struct {
+type CopyGroupToProductRequestBody struct {
 	DealerID     uint `json:"DealerID"`
 	ProductID    uint `json:"ProductID"`
-	SegmentID    uint `json:"SegmentID"`
-	TopicID      uint `json:"TopicID"`
-	NewSegmentID uint `json:"NewSegmentID"`
+	GroupID      uint `json:"GroupID"`
+	NewProductID uint `json:"NewProductID"`
 }
 
-func CopyTopicToSegment(c *fiber.Ctx, db *gorm.DB) error {
-	body := new(CopyTopicToSegmentRequestBody)
+func CopyGroupToProduct(c *fiber.Ctx, db *gorm.DB) error {
+	body := new(CopyGroupToProductRequestBody)
 	if err := c.BodyParser(body); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status": "fail",
@@ -27,9 +26,8 @@ func CopyTopicToSegment(c *fiber.Ctx, db *gorm.DB) error {
 	// Validate required fields
 	if body.DealerID == 0 ||
 		body.ProductID == 0 ||
-		body.SegmentID == 0 ||
-		body.TopicID == 0 ||
-		body.NewSegmentID == 0 {
+		body.GroupID == 0 ||
+		body.NewProductID == 0 {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status": "fail",
 			"error":  "Missing or invalid fields",
@@ -37,29 +35,28 @@ func CopyTopicToSegment(c *fiber.Ctx, db *gorm.DB) error {
 	}
 
 	// minimal security
-	if body.SegmentID == body.NewSegmentID {
+	if body.ProductID == body.NewProductID {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status": "fail",
-			"error":  "trying to copy to same segment",
+			"error":  "trying to copy to same group",
 		})
 	}
 
-	// get every QA record in this topic for the dealer
-	var topicRecords []migrations.Entry
-	var topicRecord = migrations.Entry{
+	// get every QA record in this group for the dealer
+	var groups []migrations.Entry
+	var group = migrations.Entry{
 		DealerID:  body.DealerID,
 		ProductID: body.ProductID,
-		SegmentID: body.SegmentID,
-		TopicID:   body.TopicID,
+		GroupID:   body.GroupID,
 	}
-	db.Where(&topicRecord).Find(&topicRecords)
+	db.Where(&group).Find(&groups)
 
-	// go over all of those records and copy them with the new segment id
-	for _, record := range topicRecords {
+	// go over all of those records and copy them with the new product id
+	for _, record := range groups {
 		newRow := migrations.Entry{
 			DealerID:   record.DealerID,
-			ProductID:  record.ProductID,
-			SegmentID:  body.NewSegmentID,
+			ProductID:  body.NewProductID,
+			GroupID:    record.GroupID,
 			TopicID:    record.TopicID,
 			QuestionID: record.QuestionID,
 			AnswerID:   record.AnswerID,

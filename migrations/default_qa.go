@@ -25,13 +25,13 @@ type DefaultQuestion struct {
 	Question string `json:"question"`
 }
 
-func CreateDefaultQAs(db gorm.DB, dealerId uint, segmentId uint) (ok bool) {
+func CreateDefaultQAs(db gorm.DB, dealerId uint, groupId uint) (ok bool) {
 	ok = false
 	var dealerRecord Dealer
-	var segmentRecord Segment
+	var groupRecord Group
 
 	db.First(&dealerRecord, dealerId)
-	db.First(&segmentRecord, segmentId)
+	db.First(&groupRecord, groupId)
 
 	content, err := os.ReadFile("./migrations/default_qa.json")
 	if err != nil {
@@ -69,7 +69,7 @@ func CreateDefaultQAs(db gorm.DB, dealerId uint, segmentId uint) (ok bool) {
 
 				entry := Entry{
 					Dealer:   dealerRecord,
-					Segment:  segmentRecord,
+					Group:    groupRecord,
 					Product:  productRecord,
 					Topic:    topicRecord,
 					Question: questionRecord,

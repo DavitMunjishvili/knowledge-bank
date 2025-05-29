@@ -10,7 +10,7 @@ import (
 type CreateQuestionRequestBody struct {
 	DealerID  uint   `json:"DealerID"`
 	ProductID uint   `json:"ProductID"`
-	SegmentID uint   `json:"SegmentID"`
+	GroupID   uint   `json:"GroupID"`
 	TopicID   uint   `json:"TopicID"`
 	Question  string `json:"Question"`
 }
@@ -25,7 +25,7 @@ func PostQuestionHandler(c *fiber.Ctx, db *gorm.DB) error {
 	}
 
 	// Validate required fields
-	if body.DealerID == 0 || body.ProductID == 0 || body.SegmentID == 0 || body.TopicID == 0 || body.Question == "" {
+	if body.DealerID == 0 || body.ProductID == 0 || body.GroupID == 0 || body.TopicID == 0 || body.Question == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status": "fail",
 			"error":  "Missing or invalid fields",
@@ -43,7 +43,7 @@ func PostQuestionHandler(c *fiber.Ctx, db *gorm.DB) error {
 	// insert new question
 	entry := migrations.Entry{
 		DealerID:  body.DealerID,
-		SegmentID: body.SegmentID,
+		GroupID:   body.GroupID,
 		ProductID: body.ProductID,
 		TopicID:   body.TopicID,
 		Question:  questionRecord,

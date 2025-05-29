@@ -26,47 +26,27 @@ type Product struct {
 	ProductName ProductName `gorm:"unique"`
 }
 
-type GroupTypes string
+type GroupName string
 
 const (
-	Segment GroupTypes = "Segment"
+	Car_Buying GroupName = "Car Buying"
+	Sales      GroupName = "Sales"
+	Service    GroupName = "Service"
+	Upsell     GroupName = "Upsell"
 )
 
-type GroupType struct {
-	gorm.Model
-	GroupTypeName GroupTypes `gorm:"unique"`
-}
-
-type GroupNames string
+type GroupType string
 
 const (
-	Car_Buying GroupNames = "Car Buying"
-	Sales      GroupNames = "Sales"
-	Service    GroupNames = "Service"
-	Upsell     GroupNames = "Upsell"
+	Segment GroupType = "Segment"
 )
 
+// this is the only table that should support bilingual content
 type Group struct {
 	gorm.Model
-	GroupName   GroupNames
-	GroupTypeID *uint
-
-	GroupType GroupType
+	GroupName GroupName `gorm:"unique"`
+	GroupType GroupType `gorm:"default:Segment"`
 }
-
-// type SegmentName string
-//
-// const (
-// 	Car_Buying SegmentName = "Car Buying"
-// 	Sales      SegmentName = "Sales"
-// 	Service    SegmentName = "Service"
-// 	Upsell     SegmentName = "Upsell"
-// )
-//
-// type Segment struct {
-// 	gorm.Model
-// 	SegmentName SegmentName `gorm:"unique"`
-// }
 
 type Topic struct {
 	gorm.Model
@@ -86,8 +66,17 @@ type Answer struct {
 	Custom bool `gorm:"default:false"`
 }
 
+type Locales string
+
+const (
+	EN Locales = "EN"
+	ES Locales = "ES"
+	FR Locales = "FR"
+)
+
 type Entry struct {
 	gorm.Model
+	Locale     Locales
 	DealerID   uint
 	GroupID    uint
 	ProductID  uint
@@ -113,7 +102,6 @@ func Initialize() *gorm.DB {
 
 	db.AutoMigrate(&Dealer{})
 	db.AutoMigrate(&Product{})
-	db.AutoMigrate(&GroupType{})
 	db.AutoMigrate(&Group{})
 	db.AutoMigrate(&Topic{})
 	db.AutoMigrate(&Question{})
@@ -131,19 +119,11 @@ func Initialize() *gorm.DB {
 		db.Where(product).FirstOrCreate(&product)
 	}
 
-	groupTypes := []*GroupType{
-		{GroupTypeName: Segment},
-	}
-
-	for _, groupType := range groupTypes {
-		db.Where(groupType).FirstOrCreate(&groupType)
-	}
-
 	groups := []*Group{
-		{GroupName: Car_Buying},
-		{GroupName: Sales},
-		{GroupName: Service},
-		{GroupName: Upsell},
+		{GroupName: Car_Buying, GroupType: Segment},
+		{GroupName: Sales, GroupType: Segment},
+		{GroupName: Service, GroupType: Segment},
+		{GroupName: Upsell, GroupType: Segment},
 	}
 
 	for _, group := range groups {

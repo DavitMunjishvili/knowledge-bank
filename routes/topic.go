@@ -10,7 +10,7 @@ import (
 type CreateTopicRequestBody struct {
 	DealerID  uint   `json:"DealerID"`
 	ProductID uint   `json:"ProductID"`
-	SegmentID uint   `json:"SegmentID"`
+	GroupID   uint   `json:"GroupID"`
 	TopicName string `json:"TopicName"`
 }
 
@@ -24,7 +24,7 @@ func PostTopicHandler(c *fiber.Ctx, db *gorm.DB) error {
 	}
 
 	// Validate required fields
-	if body.DealerID == 0 || body.ProductID == 0 || body.SegmentID == 0 || body.TopicName == "" {
+	if body.DealerID == 0 || body.ProductID == 0 || body.GroupID == 0 || body.TopicName == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status": "fail",
 			"error":  "Missing or invalid fields",
@@ -40,7 +40,7 @@ func PostTopicHandler(c *fiber.Ctx, db *gorm.DB) error {
 	// create new topic
 	entry := migrations.Entry{
 		DealerID:  body.DealerID,
-		SegmentID: body.SegmentID,
+		GroupID:   body.GroupID,
 		ProductID: body.ProductID,
 		Topic:     topicRecord,
 	}

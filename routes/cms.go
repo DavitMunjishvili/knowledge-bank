@@ -1,20 +1,33 @@
 package routes
 
 import (
+	"encoding/json"
 	"impel/cms-database/migrations"
+	"log"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )
 
 func normalizeRows(rows []migrations.Entry) []map[string]interface{} {
+	data, err := json.Marshal(rows)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := os.WriteFile("serialized.json", data, 0666); err != nil {
+		log.Fatal(err)
+	}
+
 	groupedData := []map[string]interface{}{}
 
 	for _, row := range rows {
 		productID := row.Product.ID
 		productName := row.Product.ProductName
-		segmentID := row.Segment.ID
-		segmentName := row.Segment.SegmentName
+		groupID := row.Group.ID
+		groupName := row.Group.GroupName
 		topicID := row.Topic.ID
 		topicName := row.Topic.TopicName
 
@@ -31,32 +44,32 @@ func normalizeRows(rows []migrations.Entry) []map[string]interface{} {
 			productEntry = map[string]interface{}{
 				"ProductID":   productID,
 				"ProductName": productName,
-				"Segments":    []map[string]interface{}{},
+				"Groups":      []map[string]interface{}{},
 			}
 			groupedData = append(groupedData, productEntry)
 		}
 
-		// Find or create the segment entry within the product
-		segments := productEntry["Segments"].([]map[string]interface{})
-		var segmentEntry map[string]interface{}
-		for _, segment := range segments {
-			if segment["SegmentID"] == segmentID {
-				segmentEntry = segment
+		// Find or create the group entry within the product
+		groups := productEntry["Groups"].([]map[string]interface{})
+		var groupEntry map[string]interface{}
+		for _, group := range groups {
+			if group["GroupID"] == groupID {
+				groupEntry = group
 				break
 			}
 		}
 
-		if segmentEntry == nil {
-			segmentEntry = map[string]interface{}{
-				"SegmentID":   segmentID,
-				"SegmentName": segmentName,
-				"Topics":      []map[string]interface{}{},
+		if groupEntry == nil {
+			groupEntry = map[string]interface{}{
+				"GroupID":   groupID,
+				"GroupName": groupName,
+				"Topics":    []map[string]interface{}{},
 			}
-			productEntry["Segments"] = append(segments, segmentEntry)
+			productEntry["Groups"] = append(groups, groupEntry)
 		}
 
-		// Find or create the topic entry within the segment
-		topics := segmentEntry["Topics"].([]map[string]interface{})
+		// Find or create the topic entry within the group
+		topics := groupEntry["Topics"].([]map[string]interface{})
 		var topicEntry map[string]interface{}
 		for _, topic := range topics {
 			if topic["TopicID"] == topicID {
@@ -71,7 +84,7 @@ func normalizeRows(rows []migrations.Entry) []map[string]interface{} {
 				"TopicName": topicName,
 				"QAs":       []map[string]interface{}{},
 			}
-			segmentEntry["Topics"] = append(topics, topicEntry)
+			groupEntry["Topics"] = append(topics, topicEntry)
 		}
 
 		// Append the QA to the topic
@@ -80,6 +93,16 @@ func normalizeRows(rows []migrations.Entry) []map[string]interface{} {
 			"Question": row.Question.Question,
 			"Answer":   row.Answer.Answer,
 		})
+	}
+
+	data, err = json.Marshal(groupedData)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := os.WriteFile("normalized.json", data, 0666); err != nil {
+		log.Fatal(err)
 	}
 
 	return groupedData
@@ -92,7 +115,7 @@ func GetCmsHandler(c *fiber.Ctx, db *gorm.DB) error {
 	var rows []migrations.Entry
 	db.Preload("Dealer").
 		Preload("Product").
-		Preload("Segment").
+		Preload("Group").
 		Preload("Topic").
 		Preload("Question").
 		Preload("Answer").

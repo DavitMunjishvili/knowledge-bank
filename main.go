@@ -35,12 +35,12 @@ func main() {
 		return routes.PostAnswerHandler(c, db)
 	})
 
-	app.Post("/copy-topic-to-segment", func(c *fiber.Ctx) error {
-		return copy.CopyTopicToSegment(c, db)
+	app.Post("/copy-topic-to-group", func(c *fiber.Ctx) error {
+		return copy.CopyTopicToGroup(c, db)
 	})
 
-	app.Post("/copy-segment-to-product", func(c *fiber.Ctx) error {
-		return copy.CopySegmentToProduct(c, db)
+	app.Post("/copy-group-to-product", func(c *fiber.Ctx) error {
+		return copy.CopyGroupToProduct(c, db)
 	})
 
 	app.Listen(":3000")

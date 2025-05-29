@@ -11,7 +11,7 @@ type CreateDealerRequestBody struct {
 	DealerName   string                 `json:"DealerName"`
 	SalesforceID string                 `json:"SalesforceID"`
 	Metadata     map[string]interface{} `json:"Metadata"`
-	SegmentID    uint                   `json:"SegmentID"`
+	GroupID      uint                   `json:"GroupID"`
 }
 
 func PostDealerHandler(c *fiber.Ctx, db *gorm.DB) error {
@@ -23,7 +23,7 @@ func PostDealerHandler(c *fiber.Ctx, db *gorm.DB) error {
 		})
 	}
 
-	if body.DealerName == "" || body.SalesforceID == "" || body.SegmentID == 0 {
+	if body.DealerName == "" || body.SalesforceID == "" || body.GroupID == 0 {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status": "fail",
 			"error":  "Missing or invalid fields",
@@ -38,8 +38,8 @@ func PostDealerHandler(c *fiber.Ctx, db *gorm.DB) error {
 	db.Create(&dealer)
 
 	// create default QAs for the dealer
-	// TODO: need to figure out SegmentID
-	ok := migrations.CreateDefaultQAs(*db, dealer.ID, body.SegmentID)
+	// TODO: need to figure out GroupID
+	ok := migrations.CreateDefaultQAs(*db, dealer.ID, body.GroupID)
 
 	if ok {
 		return c.JSON(fiber.Map{
